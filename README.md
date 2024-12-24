@@ -1,6 +1,8 @@
-# Générateur/Éditeur de Carte
+# Mapelith (Générateur/Éditeur de Carte)
 
-Ce projet génère des **cartes procédurales** (relief, température, humidité) grâce à du **bruit** (Simplex), avec la possibilité de **modifier** la carte grâce à différents modes d’édition :
+![bannière du projet](./images/banner.png)
+
+Mapelith génère des **cartes procédurales** (relief, température, humidité) grâce à du **bruit** (Simplex), avec la possibilité de **modifier** la carte grâce à différents modes d’édition :
 - **Augmenter / Diminuer** la hauteur, la température ou l’humidité.
 - **Pinceau de Bruit** pour ajouter des irrégularités locales.
 
@@ -21,7 +23,7 @@ Le tout est **optimisé** en utilisant un **buffer pixel (ImageData)** afin d’
 
 ## Aperçu
 
-Ce projet crée une **carte** de taille personnalisable, illustrée dans un `<canvas>`.  
+Mapelith crée une **carte** de taille personnalisable, illustrée dans un `<canvas>`.  
 L’utilisateur peut :
 - Paramétrer la **seed**, l’**échelle**, les **octaves**, la **persistance**, etc.
 - Générer **aléatoirement** tous les paramètres.
@@ -126,7 +128,7 @@ L’utilisateur peut :
 
 ## License
 
-Ce projet est mis à disposition sous [MIT License](LICENSE). Vous êtes libre de l’utiliser, de le modifier et de le distribuer.
+Mapelith est mis à disposition sous [MIT License](LICENSE). Vous êtes libre de l’utiliser, de le modifier et de le distribuer.
 
 > **Note** : Veillez à respecter la licence de la bibliothèque **Simplex-Noise** que vous utilisez (elle est également sous licence MIT).
 
