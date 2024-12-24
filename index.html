@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Générateur/Éditeur de Carte</title>
+  <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<h1>Générateur/Éditeur de Carte</h1>
+
+<!-- Dimensions du canvas -->
+<div style="margin-bottom: 10px;">
+  <label>
+    Largeur du canevas :
+    <input type="number" id="canvasWidth" value="500" min="100" max="2000" style="width:80px;" />
+  </label>
+  <label>
+    Hauteur du canevas :
+    <input type="number" id="canvasHeight" value="500" min="100" max="2000" style="width:80px;" />
+  </label>
+</div>
+
+<!-- Canevas pour la carte -->
+<canvas id="mapCanvas" width="500" height="500"></canvas>
+
+<!-- Contrôles de génération -->
+<div id="controls">
+  <label>
+    <span>Seed :</span>
+    <input type="text" id="seedInput" value="ma_seed" />
+  </label>
+  <button id="randomSeedBtn">Seed aléatoire</button>
+
+  <label>
+    <span>Échelle (Zoom)</span>
+    <input type="range" id="scale" min="20" max="300" value="100" />
+    <span id="scaleValue">100</span>
+  </label>
+
+  <label>
+    <span>Octaves</span>
+    <input type="range" id="octaves" min="1" max="8" value="4" />
+    <span id="octavesValue">4</span>
+  </label>
+
+  <label>
+    <span>Persistance</span>
+    <input type="range" id="persistence" min="0.1" max="0.9" step="0.1" value="0.5" />
+    <span id="persistenceValue">0.5</span>
+  </label>
+
+  <label>
+    <span>Continents</span>
+    <input type="range" id="continentCount" min="1" max="5" value="2" />
+    <span id="continentCountValue">2</span>
+  </label>
+
+  <label>
+    <span>Force du masque</span>
+    <input type="range" id="maskStrength" min="0.1" max="3" step="0.1" value="1.5" />
+    <span id="maskStrengthValue">1.5</span>
+  </label>
+
+  <label>
+    <span>Densité Continent</span>
+    <input type="range" id="continentDensity" min="0" max="2" step="0.1" value="0.5" />
+    <span id="continentDensityValue">0.5</span>
+  </label>
+
+  <label>
+    <span>Taille Continents</span>
+    <input type="range" id="continentScale" min="1" max="100" step="1" value="50" />
+    <span id="continentScaleValue">50</span>
+  </label>
+
+  <label>
+    <span>Contour Scale</span>
+    <input type="range" id="shapeScale" min="10" max="300" step="10" value="100" />
+    <span id="shapeScaleValue">100</span>
+  </label>
+  <label>
+    <span>Contour Intens.</span>
+    <input type="range" id="shapeIntensity" min="0" max="1" step="0.05" value="0.3" />
+    <span id="shapeIntensityValue">0.3</span>
+  </label>
+
+  <label>
+    <span>Warp Amplitude</span>
+    <input type="range" id="warpAmplitude" min="0" max="200" step="10" value="100" />
+    <span id="warpAmplitudeValue">100</span>
+  </label>
+
+  <label>
+    <span>Ridged Factor</span>
+    <input type="range" id="ridgedFactor" min="0" max="1" step="0.1" value="0" />
+    <span id="ridgedFactorValue">0</span>
+  </label>
+
+  <span class="spacer"></span>
+  <button id="generateBtn">Générer</button>
+  <button id="randomAllBtn">Générer aléatoirement</button>
+</div>
+
+<!-- Contrôles d'édition -->
+<div id="editControls">
+  <label>
+    <span>Mode d'édition :</span>
+    <select id="editMode">
+      <option value="heightUp">+Hauteur</option>
+      <option value="heightDown">-Hauteur</option>
+      <option value="tempUp">+Température</option>
+      <option value="tempDown">-Température</option>
+      <option value="wetUp">+Humidité</option>
+      <option value="wetDown">-Humidité</option>
+      <option value="noiseBrush">Pinceau de Bruit</option>
+    </select>
+  </label>
+
+  <label>
+    <span>Rayon du pinceau :</span>
+    <input type="range" id="brushRadius" min="1" max="50" value="10" />
+    <span id="brushRadiusValue">10</span>
+  </label>
+
+  <label>
+    <span>Intensité :</span>
+    <input type="range" id="brushIntensity" min="0.01" max="0.5" step="0.01" value="0.1" />
+    <span id="brushIntensityValue">0.1</span>
+  </label>
+
+  <label>
+    <span>Échelle du bruit :</span>
+    <input type="range" id="brushNoiseScale" min="10" max="300" step="10" value="100" />
+    <span id="brushNoiseScaleValue">100</span>
+  </label>
+</div>
+
+<script type="application/javascript" src="script.js"></script>
+</body>
+</html>
