@@ -7,6 +7,7 @@ Mapelith génère des **cartes procédurales** (relief, température, humidité)
 - **Pinceau de Bruit** pour ajouter des irrégularités locales.
 
 Le tout est **optimisé** en utilisant un **buffer pixel (ImageData)** afin d’améliorer les performances lors de l’affichage et de la retouche.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://oriloo.github.io/Mapelith_generateur-editeur-carte/)
 
 ## Sommaire
 
@@ -28,6 +29,8 @@ L’utilisateur peut :
 - Paramétrer la **seed**, l’**échelle**, les **octaves**, la **persistance**, etc.
 - Générer **aléatoirement** tous les paramètres.
 - Éditer la carte localement à la souris (peinture).
+
+👉 [Essayez Mapelith en ligne](https://oriloo.github.io/Mapelith_generateur-editeur-carte/) dès maintenant !
 
 ---
 
