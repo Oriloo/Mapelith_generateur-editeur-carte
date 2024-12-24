@@ -121,10 +121,6 @@ L’utilisateur peut :
 2. **Édition de carte** :
 
    ![Pinceau de bruit en action](./images/carte_édité.gif)
-   
-3. **Comparaison avant/après édition** :
-
-   *(Deux images côte à côte, montrant la carte avant et après qu’on ait “peint” la zone.)*
 
 ---
 
