@@ -51,7 +51,7 @@ L’utilisateur peut :
 
 1. **Cloner** le dépôt ou téléchargez le code source.
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-projet.git
+   git clone https://github.com/Oriloo/Mapelith_generateur-editeur-carte.git
    cd votre-projet
    ```
 2. Ouvrez le fichier **index.html** dans votre navigateur.
