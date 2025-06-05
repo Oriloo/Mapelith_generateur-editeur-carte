@@ -7,77 +7,92 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>Mapelith – Générateur/Éditeur de Carte</header>
-  <div id="workspace">
-    <aside id="toolbar">
-      <section class="panel" id="dimensionControls">
+  <header class="app-header">Mapelith – Générateur/Éditeur de Carte</header>
+  <div class="layout">
+    <aside class="sidebar">
+      <section class="block" id="dimensionControls">
         <h2>Dimensions</h2>
-        <label>Largeur du canevas
+        <div class="field">
+          <label for="canvasWidth">Largeur</label>
           <input type="number" id="canvasWidth" value="500" min="100" max="2000">
-        </label>
-        <label>Hauteur du canevas
+        </div>
+        <div class="field">
+          <label for="canvasHeight">Hauteur</label>
           <input type="number" id="canvasHeight" value="500" min="100" max="2000">
-        </label>
+        </div>
       </section>
-      <section class="panel" id="generationControls">
+      <section class="block" id="generationControls">
         <h2>Génération</h2>
-        <label>Seed
+        <div class="field">
+          <label for="seedInput">Seed</label>
           <input type="text" id="seedInput" value="ma_seed">
-        </label>
+        </div>
         <button id="randomSeedBtn">Seed aléatoire</button>
-        <label>Échelle (Zoom)
+        <div class="field">
+          <label for="scale">Échelle (Zoom)</label>
           <input type="range" id="scale" min="20" max="300" value="100">
           <span id="scaleValue">100</span>
-        </label>
-        <label>Octaves
+        </div>
+        <div class="field">
+          <label for="octaves">Octaves</label>
           <input type="range" id="octaves" min="1" max="8" value="4">
           <span id="octavesValue">4</span>
-        </label>
-        <label>Persistance
+        </div>
+        <div class="field">
+          <label for="persistence">Persistance</label>
           <input type="range" id="persistence" min="0.1" max="0.9" step="0.1" value="0.5">
           <span id="persistenceValue">0.5</span>
-        </label>
-        <label>Continents
+        </div>
+        <div class="field">
+          <label for="continentCount">Continents</label>
           <input type="range" id="continentCount" min="1" max="5" value="2">
           <span id="continentCountValue">2</span>
-        </label>
-        <label>Force du masque
+        </div>
+        <div class="field">
+          <label for="maskStrength">Force du masque</label>
           <input type="range" id="maskStrength" min="0.1" max="3" step="0.1" value="1.5">
           <span id="maskStrengthValue">1.5</span>
-        </label>
-        <label>Densité Continent
+        </div>
+        <div class="field">
+          <label for="continentDensity">Densité Continent</label>
           <input type="range" id="continentDensity" min="0" max="2" step="0.1" value="0.5">
           <span id="continentDensityValue">0.5</span>
-        </label>
-        <label>Taille Continents
+        </div>
+        <div class="field">
+          <label for="continentScale">Taille Continents</label>
           <input type="range" id="continentScale" min="1" max="100" step="1" value="50">
           <span id="continentScaleValue">50</span>
-        </label>
-        <label>Contour Scale
+        </div>
+        <div class="field">
+          <label for="shapeScale">Contour Scale</label>
           <input type="range" id="shapeScale" min="10" max="300" step="10" value="100">
           <span id="shapeScaleValue">100</span>
-        </label>
-        <label>Contour Intens.
+        </div>
+        <div class="field">
+          <label for="shapeIntensity">Contour Intens.</label>
           <input type="range" id="shapeIntensity" min="0" max="1" step="0.05" value="0.3">
           <span id="shapeIntensityValue">0.3</span>
-        </label>
-        <label>Warp Amplitude
+        </div>
+        <div class="field">
+          <label for="warpAmplitude">Warp Amplitude</label>
           <input type="range" id="warpAmplitude" min="0" max="200" step="10" value="100">
           <span id="warpAmplitudeValue">100</span>
-        </label>
-        <label>Ridged Factor
+        </div>
+        <div class="field">
+          <label for="ridgedFactor">Ridged Factor</label>
           <input type="range" id="ridgedFactor" min="0" max="1" step="0.1" value="0">
           <span id="ridgedFactorValue">0</span>
-        </label>
+        </div>
         <button id="generateBtn">Générer</button>
         <button id="randomAllBtn">Générer aléatoirement</button>
       </section>
-      <section class="panel" id="editControls">
+      <section class="block" id="editControls">
         <h2>Édition</h2>
-        <label>Mode d'édition
+        <div class="field">
+          <label for="editMode">Mode d'édition</label>
           <select id="editMode">
             <option value="heightUp">+Hauteur</option>
             <option value="heightDown">-Hauteur</option>
@@ -87,25 +102,30 @@
             <option value="wetDown">-Humidité</option>
             <option value="noiseBrush">Pinceau de Bruit</option>
           </select>
-        </label>
-        <label>Rayon du pinceau
+        </div>
+        <div class="field">
+          <label for="brushRadius">Rayon du pinceau</label>
           <input type="range" id="brushRadius" min="1" max="50" value="10">
           <span id="brushRadiusValue">10</span>
-        </label>
-        <label>Intensité
+        </div>
+        <div class="field">
+          <label for="brushIntensity">Intensité</label>
           <input type="range" id="brushIntensity" min="0.01" max="0.5" step="0.01" value="0.1">
           <span id="brushIntensityValue">0.1</span>
-        </label>
-        <label>Échelle du bruit
+        </div>
+        <div class="field">
+          <label for="brushNoiseScale">Échelle du bruit</label>
           <input type="range" id="brushNoiseScale" min="10" max="300" step="10" value="100">
           <span id="brushNoiseScaleValue">100</span>
-        </label>
+        </div>
       </section>
     </aside>
-    <main id="viewer">
-      <canvas id="mapCanvas" width="500" height="500"></canvas>
+    <main class="main">
+      <div class="canvas-wrapper">
+        <canvas id="mapCanvas" width="500" height="500"></canvas>
+      </div>
     </main>
   </div>
-  <script type="application/javascript" src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
