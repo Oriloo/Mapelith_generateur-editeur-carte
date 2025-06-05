@@ -10,9 +10,12 @@
 <body>
   <header>Mapelith &ndash; Générateur/Éditeur de Carte</header>
   <div id="container">
-    <canvas id="mapCanvas" width="500" height="500"></canvas>
+    <div id="canvasContainer">
+      <canvas id="mapCanvas" width="500" height="500"></canvas>
+    </div>
     <aside id="sidebar">
       <section id="dimensionControls" class="section">
+        <h2>Dimensions</h2>
         <label>
           Largeur du canevas :
           <input type="number" id="canvasWidth" value="500" min="100" max="2000" />
@@ -23,6 +26,7 @@
         </label>
       </section>
       <section id="controls" class="section">
+        <h2>Génération</h2>
         <label>
           <span>Seed :</span>
           <input type="text" id="seedInput" value="ma_seed" />
@@ -99,6 +103,7 @@
       </section>
 
       <section id="editControls" class="section">
+        <h2>Édition</h2>
         <label>
           <span>Mode d'édition :</span>
           <select id="editMode">
