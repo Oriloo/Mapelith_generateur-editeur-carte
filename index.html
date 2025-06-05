@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="app-header">Mapelith – Générateur/Éditeur de Carte</header>
-  <div class="layout">
+  <header class="header">Mapelith – Générateur/Éditeur de Carte</header>
+  <div class="container">
     <aside class="sidebar">
-      <section class="block" id="dimensionControls">
+      <section class="panel" id="dimensionControls">
         <h2>Dimensions</h2>
         <div class="field">
           <label for="canvasWidth">Largeur</label>
@@ -24,7 +24,7 @@
           <input type="number" id="canvasHeight" value="500" min="100" max="2000">
         </div>
       </section>
-      <section class="block" id="generationControls">
+      <section class="panel" id="generationControls">
         <h2>Génération</h2>
         <div class="field">
           <label for="seedInput">Seed</label>
@@ -89,7 +89,7 @@
         <button id="generateBtn">Générer</button>
         <button id="randomAllBtn">Générer aléatoirement</button>
       </section>
-      <section class="block" id="editControls">
+      <section class="panel" id="editControls">
         <h2>Édition</h2>
         <div class="field">
           <label for="editMode">Mode d'édition</label>
@@ -121,7 +121,7 @@
       </section>
     </aside>
     <main class="main">
-      <div class="canvas-wrapper">
+      <div class="canvas-container">
         <canvas id="mapCanvas" width="500" height="500"></canvas>
       </div>
     </main>
